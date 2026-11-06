@@ -12,10 +12,20 @@
 | 4d | Answer language fix | ✅ done | Auto-detect plus button (Auto/EN/KO), language instruction, prepared chip answers in `data/quick_answers.json`. Russian and Uzbek were built, then removed on request |
 | 4e | Answer cleanup | ✅ done | Assistant messages no longer cut, `max_retries=0`, app name stays in Korean, one label format |
 | 4f | Invalid output and pinned versions | ✅ done | Repair, one retry, then friendly error; never raw JSON. `requirements.txt` pinned to `.venv` versions |
+| 4g | Final fixes | ✅ done | `item` optional, category rule in the prompt, final event-day checklist |
 | 5 | Testing on phones | ⬜ todo | iPhone and Android: keyboard, Korean typing, safe area, fonts |
-| 6 | Deploy | 🔄 in progress | `render.yaml`, README steps and rate limit are ready; a fresh copy of the repo files passes tests and starts. Not yet pushed to GitHub or deployed |
-| 7 | QR + poster | ⬜ todo | `scripts/make_qr.py` is still empty |
-| 8 | Event-day check | ⬜ todo | Balance, spending cap, model, final QR scan |
+| 6 | Deploy | ✅ done | Live at https://recycleagent.onrender.com. `/health`, the page, chips, and one English and one Korean chat question all work |
+| 7 | QR + poster | ✅ done | `scripts/make_qr.py` makes `qr.png`, `qr_poster.png` and `qr_poster.pdf`. All three decode to the live URL by software; not yet scanned from a real print |
+| 8 | Event-day checklist | ⬜ todo | See the checklist below |
+
+## Event-day checklist (Step 8)
+
+- [ ] UptimeRobot pings /health every 5 min
+- [ ] Gemini billing linked (or OpenAI set) + budget alert
+- [ ] Open the site 10 min before start
+- [ ] Phone test on mobile data: chip, English, Korean question
+- [ ] Check aistudio.google.com/usage during the day
+- [ ] No git push during busy hours
 
 ## Decisions log
 
@@ -39,6 +49,10 @@
 | 2026-11-06 | Render free web service, defined in `render.yaml`, with secrets entered on Render | Simple deploy; the API key never enters the repo |
 | 2026-11-06 | Invalid model output: repair, retry once, then friendly error | Visitors must never see raw JSON; repairs cost nothing, and a retry costs tokens only when needed |
 | 2026-11-06 | `requirements.txt` pinned to exact `.venv` versions, including indirect packages | Render installs what was tested |
+| 2026-11-06 | QR uses level H; on the poster the black pattern is about 800 px, plus its white border | Scans from further away and survives damage to the print |
+| 2026-11-06 | `item` is optional (default empty) | The model often left it out, which caused needless errors for visitors |
+| 2026-11-06 | Category must match the bin where the item goes | Eggshells were labeled food waste while the text said not to put them there |
+| 2026-11-06 | Poster says "AI Recycling Guide Lab" (the event booth name); the app name stays as it is | Booth name is for the poster only |
 | 2026-11-06 | New `localStorage` key for the language state | An old saved `ko` would otherwise force Korean answers |
 | 2026-11-06 | Layered `app/` structure | Requested in Step 4c; no behavior change |
 
@@ -55,7 +69,7 @@
 - **Rate limit weaknesses:** `X-Forwarded-For` can be faked; the count is in memory and for a single worker. Set a spending cap.
 - **Out of credit looks like "too many questions":** check the balance before the event.
 - **Cost:** about 25,500 prompt tokens per question; caching isn't confirmed.
-- **Some questions fail on `gemini-3.5-flash-lite`:** the model often leaves out `item` for the coffee cup question, and the retry can fail the same way. In 5 real tries, 1 ended in the friendly error for this reason and 1 from a Gemini 503. Visitors never see raw JSON, but they do see an error. Decision needed: accept a missing `item`, or try a larger model.
+- **Gemini 429 under load:** after about 10 real questions in under a minute, Gemini returned 429 on the current key. Each question sends about 25,500 tokens, so a busy booth could hit this. The likely cause is a token-per-minute quota, but the log doesn't show the reason. Link billing and check the quota before the event.
 - **Gemini 503:** one request in about 20 failed with 503. With retries off, the visitor sees the error reply.
 - **Label format relies on the model:** the instruction sets it, but nothing on the server enforces it.
 - **Translations unreviewed:** Korean page text and Korean prepared answers need a native speaker's check.
@@ -66,4 +80,4 @@
 
 ## Next action
 
-Push to GitHub and deploy on Render, then test on real phones (Step 5) against the live address.
+Test on real phones (Step 5), including scanning a printed poster.

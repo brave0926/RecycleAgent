@@ -92,6 +92,33 @@ def test_request_sent_to_model(model):
     assert all(len(m["content"]) <= settings.max_msg_chars for m in kept)
 
 
+def test_item_is_optional(model):
+    part = {"label": "Plastic (플라스틱)", "category": "plastic", "action": "Rinse it."}
+    model.return_value = completion(json.dumps({**GOOD_ANSWER, "parts": [part]}))
+    response = client.post("/api/chat", json=QUESTION)
+    assert response.json()["parts"] == [{**part, "item": ""}]
+    assert model.await_count == 1  # A missing item no longer triggers a retry.
+
+
+def test_eggshell_answer_keeps_general_category(model):
+    """A mock can't prove the model obeys, so this checks the rule is sent and the answer survives."""
+    eggshell = {
+        "reply": "달걀 껍데기는 음식물이 아니라 종량제봉투에 버려요.",
+        "parts": [
+            {"label": "종량제봉투", "category": "general", "item": "달걀 껍데기", "action": "종량제봉투에 넣어 버려요."}
+        ],
+        "tip": "지역별 규칙이 다를 수 있어요.",
+        "source": "Part C – C-10. 음식물류폐기물 (구판 가이드라인)",
+    }
+    model.return_value = completion(json.dumps(eggshell, ensure_ascii=False))
+    response = client.post("/api/chat", json={"messages": [{"role": "user", "content": "달걀 껍데기는 어디에 버려요?"}]})
+    assert response.json() == eggshell
+    assert response.json()["parts"][0]["category"] == "general"
+    assert "category must be the bin where the item actually goes" in SYSTEM_PROMPT
+    assert "eggshells, bones, shells" in SYSTEM_PROMPT
+    assert model.await_args.kwargs["messages"][0]["content"] == SYSTEM_PROMPT
+
+
 def test_only_user_messages_are_cut(model):
     answer = json.dumps({**GOOD_ANSWER, "tip": "x" * 2000})
     history = [

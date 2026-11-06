@@ -48,7 +48,7 @@
 | Core | `app/core/` | Settings (the only place that reads env vars), logging setup | python-dotenv |
 | Data | `data/` | Knowledge base and prepared chip answers | nothing |
 | Frontend | `static/` | Page, styles, chat logic | `/api/chat` |
-| Scripts | `scripts/` | Knowledge base check; QR generator (`make_qr.py`, still empty until Step 7) | `data/` |
+| Scripts | `scripts/` | Knowledge base check; QR code and poster generator (`make_qr.py`) | `data/` |
 | Tests | `tests/` | API tests with a mocked model call | app |
 
 ## 4. Request flow
@@ -96,6 +96,7 @@
 ```
 
 - `role` is `user` or `assistant`.
+- In the response, `item` may be empty; the page then shows just the action.
 - `lang` is `auto`, `en` or `ko`, and defaults to `auto`. It sets the language of both the AI answer and the server's fixed replies.
 - With `auto`, the latest user message decides: any Hangul → `ko`; anything else → `en`.
 

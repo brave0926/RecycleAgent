@@ -19,7 +19,7 @@ class AnswerPart(BaseModel):
     # Plain str on purpose: one unexpected category should not throw away a good
     # answer. The page can style unknown values.
     category: str
-    item: str
+    item: str = ""  # The model sometimes leaves this out; the page then shows just the action.
     action: str
 
 

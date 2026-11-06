@@ -41,7 +41,7 @@ export function addAnswer(data, sourcePrefix) {
     const row = el("div", "part");
     const colorClass = KNOWN_CATEGORIES.has(part.category) ? " cat-" + part.category : "";
     row.appendChild(el("span", "part-label" + colorClass, part.label));
-    row.appendChild(el("span", "part-text", part.item + " — " + part.action));
+    row.appendChild(el("span", "part-text", part.item ? part.item + " — " + part.action : part.action));
     bubble.appendChild(row);
   });
 

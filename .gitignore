@@ -5,4 +5,5 @@ __pycache__/
 .idea/
 qr.png
 qr_poster.png
+qr_poster.pdf
 .pytest_cache/

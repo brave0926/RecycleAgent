@@ -14,5 +14,6 @@ OUTPUT_RULES = """=== OUTPUT RULES ===
  "source": "Part and section, e.g. 'Part A – 마. 무색 PET병 (별표 1, 2026)'"}
 - Single-material item → 1 part. Mixed item → one part per material. General question → parts = [].
 - "special" = batteries, lighting, e-waste, hazardous, bulky waste. "general" = 종량제봉투 / non-combustible sack.
+- category must be the bin where the item actually goes; if the action says 종량제봉투/general waste, category is general, even if the item sounds like food (e.g. eggshells, bones, shells).
 5. Keep the whole answer short: reply ≤ 1 sentence, each action ≤ 25 words, tip ≤ 2 sentences.
 """

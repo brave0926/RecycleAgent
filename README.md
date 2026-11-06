@@ -63,6 +63,14 @@ ngrok http 8080
 
 Use the `https://` address that ngrok prints. The laptop must stay on and connected. The address may change each time ngrok starts, and any QR code must point to the current one.
 
+## QR code and poster
+
+```bash
+python scripts/make_qr.py https://recycleagent.onrender.com
+```
+
+This creates `qr.png`, `qr_poster.png` and `qr_poster.pdf` (A4) in the project folder. It needs a Korean font found by `fc-list`: Noto Sans CJK KR or NanumGothic. Print the poster at 100% scale, then scan the printed copy with a phone.
+
 ## Docs
 
 - [ARCHITECTURE.md](ARCHITECTURE.md): how the app is built

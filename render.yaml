@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ai-recycling-guide
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      # Same Python version as local testing.
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      # sync: false means Render asks for these values; they are never stored in this file.
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        sync: false
+      - key: OPENAI_BASE_URL
+        sync: false

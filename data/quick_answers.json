@@ -1,0 +1,142 @@
+{
+  "chips": [
+    {
+      "id": "pet",
+      "label": { "en": "PET bottle", "ko": "페트병" },
+      "answer": {
+        "en": {
+          "reply": "PET bottles are sorted by color.",
+          "parts": [
+            { "label": "Clear PET (무색 PET병)", "category": "plastic", "item": "Clear water or drink bottle", "action": "Empty it, remove the label, crush it and close the cap; put it out separately from other plastics." },
+            { "label": "Plastic (플라스틱)", "category": "plastic", "item": "Colored PET bottle", "action": "Empty and rinse it, remove the label, and put it out with plastic containers (합성수지 용기류)." }
+          ],
+          "tip": "Rinse clear bottles that held sugary drinks, and use a clear or semi-clear bag where required. Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part A – 마. 무색 PET병, 바. 합성수지 용기·트레이류 (별표 1, 2026)"
+        },
+        "ko": {
+          "reply": "페트병은 색깔에 따라 나눠서 버려요.",
+          "parts": [
+            { "label": "무색 PET병", "category": "plastic", "item": "무색 투명한 생수·음료병", "action": "내용물을 비우고 라벨을 뗀 뒤 압착해 뚜껑을 닫아 다른 플라스틱과 따로 배출해요." },
+            { "label": "플라스틱", "category": "plastic", "item": "유색 페트병", "action": "내용물을 비우고 헹군 뒤 라벨을 떼어 합성수지 용기류로 배출해요." }
+          ],
+          "tip": "설탕 등이 든 음료병은 물로 헹구고, 필요한 곳에서는 투명·반투명 봉투에 담아요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part A – 마. 무색 PET병, 바. 합성수지 용기·트레이류 (별표 1, 2026)"
+        }
+      }
+    },
+    {
+      "id": "food",
+      "label": { "en": "Food waste", "ko": "음식물 쓰레기" },
+      "answer": {
+        "en": {
+          "reply": "Soft food scraps are food waste, but hard scraps are not.",
+          "parts": [
+            { "label": "Food waste (음식물류폐기물)", "category": "food", "item": "Soft food scraps", "action": "Squeeze out water, remove bags and toothpicks, cut up large pieces, and put out using your district's method." },
+            { "label": "General waste (종량제봉투)", "category": "general", "item": "Bones, eggshells, shells, tea leaves, fruit pits", "action": "Put them in the general-waste bag (종량제봉투), not with food waste." }
+          ],
+          "tip": "Hard nut shells, onion and garlic skins, and fish bones also go in the general-waste bag. Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part C – C-10. 음식물류폐기물 (구판 가이드라인)"
+        },
+        "ko": {
+          "reply": "부드러운 음식물은 음식물류폐기물이지만, 딱딱한 것은 아니에요.",
+          "parts": [
+            { "label": "음식물류폐기물", "category": "food", "item": "부드러운 음식물", "action": "물기를 꽉 짜고 비닐·이쑤시개를 뺀 뒤 큰 덩어리는 잘라 지자체 방식대로 배출해요." },
+            { "label": "종량제봉투", "category": "general", "item": "뼈, 달걀 껍데기, 조개껍데기, 차 찌꺼기, 과일 씨", "action": "음식물이 아니라 종량제봉투에 넣어 버려요." }
+          ],
+          "tip": "딱딱한 견과 껍데기, 양파·마늘 껍질, 생선뼈도 종량제봉투로 버려요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part C – C-10. 음식물류폐기물 (구판 가이드라인)"
+        }
+      }
+    },
+    {
+      "id": "vinyl",
+      "label": { "en": "Vinyl / film", "ko": "비닐" },
+      "answer": {
+        "en": {
+          "reply": "Clean plastic film goes out as vinyl (비닐류).",
+          "parts": [
+            { "label": "Vinyl (비닐류)", "category": "vinyl", "item": "Disposable bags, wrappers, clean plastic wrap", "action": "Empty and rinse them, then put them in a clear or semi-clear bag so they don't blow away." }
+          ],
+          "tip": "Dirty plastic wrap, tablecloths, rubber gloves and mats are not accepted; follow local rules, such as the general-waste bag (종량제봉투). Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part A – 사. 합성수지 비닐류 (별표 1, 2026)"
+        },
+        "ko": {
+          "reply": "깨끗한 비닐은 비닐류로 배출해요.",
+          "parts": [
+            { "label": "비닐류", "category": "vinyl", "item": "1회용 봉투, 포장 비닐, 깨끗한 랩", "action": "내용물을 비우고 헹군 뒤 흩날리지 않게 투명·반투명 봉투에 담아 배출해요." }
+          ],
+          "tip": "이물질이 묻은 랩, 식탁보, 고무장갑, 돗자리는 비닐류가 아니며 종량제봉투 등 지자체 조례에 따라 버려요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part A – 사. 합성수지 비닐류 (별표 1, 2026)"
+        }
+      }
+    },
+    {
+      "id": "batteries",
+      "label": { "en": "Batteries", "ko": "건전지" },
+      "answer": {
+        "en": {
+          "reply": "Batteries go in a battery collection box (전지수거함).",
+          "parts": [
+            { "label": "Batteries (전지류)", "category": "special", "item": "Single-use and rechargeable batteries", "action": "Remove them from the product if possible, then use a battery box or a return point such as an electronics dealer." }
+          ],
+          "tip": "For safety, cover exposed terminals with insulating tape or seal the battery in a plastic bag. Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part A – 차. 전지류 (별표 1, 2026)"
+        },
+        "ko": {
+          "reply": "건전지는 전지수거함에 버려요.",
+          "parts": [
+            { "label": "전지류", "category": "special", "item": "1차 전지, 충전식 2차 전지", "action": "제품에서 분리할 수 있으면 분리해 전지수거함이나 전자제품 대리점 등 회수처에 배출해요." }
+          ],
+          "tip": "안전을 위해 단자가 노출된 전지는 절연테이프로 감거나 비닐팩에 밀봉해요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part A – 차. 전지류 (별표 1, 2026)"
+        }
+      }
+    },
+    {
+      "id": "styrofoam",
+      "label": { "en": "Styrofoam", "ko": "스티로폼" },
+      "answer": {
+        "en": {
+          "reply": "Clean styrofoam packaging can be recycled.",
+          "parts": [
+            { "label": "Styrofoam (발포 합성수지)", "category": "styrofoam", "item": "Food boxes and packing foam", "action": "Empty and rinse it, remove labels and other materials, then put it out with styrofoam." }
+          ],
+          "tip": "Foam with stuck-on food, coatings or building insulation is not accepted, and foam from appliances should go back to the seller if possible. Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part A – 아. 발포 합성수지 (별표 1, 2026)"
+        },
+        "ko": {
+          "reply": "깨끗한 스티로폼 포장재는 재활용할 수 있어요.",
+          "parts": [
+            { "label": "발포 합성수지", "category": "styrofoam", "item": "식품 포장 상자, 완충재", "action": "내용물을 비우고 헹군 뒤 상표 등 다른 재질을 떼어 스티로폼으로 배출해요." }
+          ],
+          "tip": "음식물이 묻었거나 코팅·접착된 것, 건축용 스티로폼은 안 되며, 전자제품 완충재는 가급적 구입처에 반납해요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part A – 아. 발포 합성수지 (별표 1, 2026)"
+        }
+      }
+    },
+    {
+      "id": "pizza",
+      "label": { "en": "Pizza box", "ko": "피자 박스" },
+      "answer": {
+        "en": {
+          "reply": "A pizza box goes out as paper, except any part stained with oil.",
+          "parts": [
+            { "label": "Paper (종이류)", "category": "paper", "item": "Clean part of the box", "action": "Remove tape and other materials, flatten it, and put it out with paper." },
+            { "label": "General waste (종량제봉투)", "category": "general", "item": "Oil-stained inner paper", "action": "Put it in the general-waste bag (종량제봉투)." }
+          ],
+          "tip": "Throw away leftover food and anything that isn't paper first. Local rules differ — check the 구청 or the app 내 손안의 분리배출.",
+          "source": "Part D – 피자박스 (구판 가이드라인 부록)"
+        },
+        "ko": {
+          "reply": "피자 박스는 종이류로 배출하되, 기름이 묻은 부분은 빼고 버려요.",
+          "parts": [
+            { "label": "종이류", "category": "paper", "item": "깨끗한 상자 부분", "action": "테이프 등 다른 재질을 떼고 펴서 종이류로 배출해요." },
+            { "label": "종량제봉투", "category": "general", "item": "기름에 오염된 내부 종이", "action": "종량제봉투에 넣어 버려요." }
+          ],
+          "tip": "남은 음식과 종이가 아닌 것은 먼저 빼 주세요. 지역별 규칙이 다를 수 있으니 구청이나 앱 '내 손안의 분리배출'을 확인하세요.",
+          "source": "Part D – 피자박스 (구판 가이드라인 부록)"
+        }
+      }
+    }
+  ]
+}
